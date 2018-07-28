@@ -175,3 +175,15 @@ footer ul li a:active,
 footer ul li a.active {
   text-decoration: none;
 }
+.icon {
+padding: 15px;
+color: white;
+}
+
+.icon:hover {
+    color: #fdcc52;
+}
+
+.icon-group {
+    padding-top: 60px;
+}

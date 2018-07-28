@@ -66,7 +66,7 @@ var resolver = {
 /* Some GLaDOS quotes from Portal 2 chapter 9: The Part Where He Kills You
  * Source: http://theportalwiki.com/wiki/GLaDOS_voice_lines#Chapter_9:_The_Part_Where_He_Kills_You
  */
-var strings = ['Merhaba Merhaba, Benim Adım Metin!', 'Hello hello, My Name Is Metin!', 'مرحبا مرحبا اسمي ميتين'];
+var strings = ['code', 'translate', 'manage', 'and get things done.'];
 
 var counter = 0;
 
@@ -74,9 +74,9 @@ var options = {
   // Initial position
   offset: 0,
   // Timeout between each random character
-  timeout: 5,
+  timeout: 0,
   // Number of random characters to show
-  iterations: 10,
+  iterations: 1,
   // Random characters to pick from
   characters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'x', '#', '%', '&', '-', '+', '_', '?', '/', '\\', '='],
   // String to resolve
