@@ -1,0 +1,819 @@
+@import 'reset.scss';
+@import 'variable.scss';
+@import '../node_modules/animate-scss/animate.scss';
+@import 'mixin.scss';
+
+#index {
+  width: 1170px;
+  margin: 0px auto;
+  font-family: $overPass;
+  @include responsive(xs) {
+    width: 100%;
+  }
+  a {
+    text-decoration: none;
+    color: $mainColor;
+  }
+  h1 {
+    font-size: $logoSize;
+    font-family: $playFair;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: $h2Size;
+    font-family: $playFair;
+    font-weight: bold;
+  }
+  header {
+    padding: 50px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+    background: white;
+    top: 0;
+    @include fadeInDownBig($delay: 0s);
+    @include responsive(xs) {
+      width: 100%;
+      top: 0;
+      z-index: 3;
+      padding: 20px 0;
+    }
+    div {
+      width: 1170px;
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+    }
+    .openMenu {
+      background: url('/menu.svg');
+      width: 18px;
+      height: 16px;
+      margin-left: 27px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .closeMenu {
+      background: url('/close.svg');
+      width: 16px;
+      height: 16px;
+      margin-left: 27px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    h1 {
+      @include responsive(xs) {
+        position: absolute;
+        transform: translate(-50%, 0);
+        left: 50%;
+      }
+    }
+    nav {
+      align-items: center;
+      display: flex;
+      @include responsive(xs) {
+        display: none;
+      }
+      &.mobil {
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        z-index: 20;
+        background: white;
+        flex-direction: column;
+        top: 56px;
+        ul {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          li {
+            width: 100%;
+            padding: 24px 24px;
+            border-bottom: 1px solid $collapseHr;
+            a {
+              display: block;
+              font-size: $readSize;
+            }
+          }
+        }
+        ul.social {
+          flex-direction: row;
+          padding-top: 28px;
+          padding-left: 24px;
+          li {
+            border: 0;
+            max-width: min-content;
+            padding: 0px 13px;
+            img {
+              width: 23px;
+            }
+          }
+        }
+      }
+      ul {
+        align-items: center;
+        display: flex;
+        li {
+          padding: 0 11px;
+          a {
+            padding: 4px;
+            font-size: $menuSize;
+            font-weight: bold;
+          }
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+        &.social {
+          li {
+            padding: 0 4px;
+            &:first-child {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+      span {
+        font-weight: bold;
+        padding: 0 15px;
+        align-self: baseline;
+      }
+    }
+  }
+  section {
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: -1;
+    &.closeResMenu {
+      z-index: 1;
+    }
+    &#Contact {
+      @include responsive(xs) {
+        border-bottom: 0px solid $collapseHr;
+      }
+    }
+    @include slideInLeft($delay: 0s);
+    @include responsive(xs) {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid $collapseHr;
+      padding-bottom: 60px;
+      margin-bottom: 30px;
+    }
+    &#Articles {
+      @include responsive(xs) {
+        border-bottom: 0;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+    }
+
+    &#Speaking {
+      align-items: center;
+      @include responsive(xs) {
+        width: 100%;
+        align-items: flex-start;
+        padding: 0 24px;
+        padding-bottom: 60px;
+      }
+    }
+    &#Newsletter {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include responsive(xs) {
+        width: 100%;
+        align-items: flex-start;
+        padding: 0 24px;
+        padding-bottom: 60px;
+      }
+      h3 {
+        font-weight: bold;
+        font-size: $h2Size;
+        font-family: $playFair;
+        line-height: 48px;
+        padding: 40px 0 12px 0;
+        @include responsive(xs) {
+          font-size: $collapseTitle;
+        }
+      }
+      p {
+        color: $thirdColor;
+        font-size: $descSize;
+        font-weight: 300;
+        letter-spacing: -0.2px;
+        line-height: $descHeight;
+        width: 570px;
+        text-align: center;
+        padding-bottom: 40px;
+        @include responsive(xs) {
+          width: 100%;
+          font-size: $buttonSize;
+          text-align: left;
+          line-height: 24px;
+        }
+      }
+      form {
+        position: relative;
+        padding-bottom: 20px;
+        input {
+          outline: none;
+          border: 2px solid #000;
+          border-radius: 85px;
+          box-sizing: border-box;
+          width: 433px;
+          height: 62px;
+          padding: 8px 131px 8px 30px;
+          font-size: $buttonSize;
+          color: #000;
+          letter-spacing: -0.2px;
+          font-weight: bold;
+          @include responsive(xs) {
+            width: 100%;
+            font-size: $buttonSize;
+          }
+          &::placeholder {
+            font-size: $buttonSize;
+            color: #000;
+            letter-spacing: -0.2px;
+            font-weight: bold;
+            @include responsive(xs) {
+              font-size: $buttonSize;
+            }
+          }
+        }
+        button {
+          position: absolute;
+          right: 6px;
+          top: 10px;
+          background: #000;
+          border: 2px solid #000;
+          box-sizing: border-box;
+          border-radius: 40px;
+          outline: none;
+          padding: 11px 20px;
+          color: #fff;
+          font-weight: bold;
+          font-size: $buttonSize;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    section {
+      width: 50%;
+      display: block;
+      @include responsive(xs) {
+        margin-top: 30px;
+        border-bottom: 0;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+      &.specialtiesIMG,
+      &.didIMG {
+        @include responsive(xs) {
+          width: 90%;
+        }
+      }
+      &.specialtiesIMG img,
+      &.didIMG img {
+        @include responsive(xs) {
+          max-width: 90%;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+      h2 {
+        padding-bottom: 25px;
+      }
+      button {
+        margin: 50px 0;
+        background-color: $mainColor;
+        border-radius: $borderRadius;
+        outline: none;
+        font-family: $overPass;
+        font-weight: bold;
+        font-size: $buttonSize;
+        display: flex;
+        align-items: center;
+        padding: 11px 20px;
+        border: none;
+        color: $secondColor;
+        @include responsive(xs) {
+          margin: 27px 24px 0px 0;
+        }
+        img {
+          padding-right: 9px;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      #collapse {
+        display: block;
+        @include responsive(xs) {
+          width: 100%;
+        }
+        li {
+          width: 500px;
+          border-bottom: 1px solid $collapseHr;
+          padding-bottom: 24px;
+          margin-bottom: 24px;
+          @include responsive(xs) {
+            width: 100%;
+          }
+          &:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+          }
+          span {
+            display: flex;
+            font-family: $playFair;
+            font-size: $collapseTitle;
+            line-height: $lineHeight;
+            font-weight: 300;
+            @include responsive(xs) {
+              font-size: $readSize;
+            }
+            &:hover {
+              cursor: pointer;
+            }
+            &::before {
+              content: url(/angle.svg);
+              padding-right: 13px;
+              line-height: 17px;
+            }
+            &.openCollapse::before {
+              content: url(/angleYellow.svg);
+            }
+          }
+          p {
+            font-weight: 300;
+            color: $thirdColor;
+            line-height: $descHeight;
+            font-size: $descSize;
+            letter-spacing: -0.2px;
+            padding: 24px 0 0px 27px;
+            @include responsive(xs) {
+              font-size: $buttonSize;
+            }
+          }
+        }
+      }
+      &.aboutText {
+        width: 430px;
+        @include responsive(xs) {
+          order: 2;
+          width: 100%;
+          padding: 0px 24px;
+          font-size: $readSize;
+        }
+        p {
+          font-weight: 200;
+          font-size: $pSize;
+          line-height: $lineHeight;
+          letter-spacing: -0.2px;
+          @include responsive(xs) {
+            font-size: $readSize;
+          }
+        }
+      }
+      &#aboutVideo {
+        background: none;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        z-index: 99;
+      }
+      &.aboutVideo {
+        width: 586px;
+        height: 408px;
+        border-radius: $videoRadius;
+        background: $videoBG;
+        position: relative;
+        z-index: 3;
+        @include responsive(xs) {
+          width: 100%;
+          height: 228px;
+          order: 1;
+          border-radius: 0;
+        }
+        iframe {
+          object-fit: cover;
+          @include responsive(xs) {
+            width: 100%;
+            height: 228px;
+          }
+        }
+        &::before {
+          content: url(/arrow.svg);
+          position: absolute;
+          top: -39.8px;
+          z-index: 3;
+          left: -36.72px;
+          @include responsive(xs) {
+            width: 58px;
+            height: 49px;
+            content: url(/resArrow.svg);
+            top: -23px;
+            left: 16px;
+          }
+        }
+        &::after {
+          content: url(/like.svg);
+          position: absolute;
+          bottom: -30.7px;
+          z-index: 3;
+          right: -29.75px;
+          @include responsive(xs) {
+            width: 46px;
+            height: 52px;
+            content: url(/resLike.svg);
+            bottom: -12px;
+            right: 16px;
+          }
+        }
+
+        .bioPhoto {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 586px;
+          height: 408px;
+          object-fit: cover;
+          transform: translate(-50%, 0);
+          @include responsive(xs) {
+            width: 100%;
+            height: 228px;
+          }
+        }
+        .playButton {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          @include responsive(xs) {
+            width: 20%;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      &#aboutVideo::before,
+      &#aboutVideo::after {
+        content: '';
+      }
+      &.specialtiesIMG {
+        padding-top: 0px;
+        @include responsive(xs) {
+          margin-left: 24px;
+        }
+      }
+      &.specialtiesContent {
+        @include responsive(xs) {
+          width: 100%;
+          padding: 0 24px;
+        }
+        h2 {
+          margin-bottom: 40px;
+          @include responsive(xs) {
+            margin-top: 20px;
+          }
+        }
+      }
+      &.testimonialsContent {
+        min-width: 770px;
+        @include responsive(xs) {
+          min-width: 100%;
+          padding: 0 24px;
+          order: 2;
+        }
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 60px;
+          justify-content: space-between;
+          @include responsive(xs) {
+            margin-top: 15px;
+          }
+          li {
+            width: 46%;
+            @include responsive(xs) {
+              min-width: 100%;
+            }
+            &:first-child {
+              width: 100%;
+              margin-bottom: 30px;
+            }
+            &:last-child {
+              @include responsive(xs) {
+                margin-top: 30px;
+              }
+            }
+            h3 {
+              font-weight: 200;
+              font-size: $collapseTitle;
+              letter-spacing: -0.2px;
+              line-height: $lineHeight;
+              padding-bottom: 15px;
+              @include responsive(xs) {
+                font-size: $readSize;
+              }
+            }
+            p {
+              font-weight: 300;
+              font-size: $descSize;
+              color: $thirdColor;
+              letter-spacing: -0.2px;
+              line-height: $descHeight;
+              @include responsive(xs) {
+                font-size: $buttonSize;
+              }
+            }
+            .star {
+              margin-bottom: 30px;
+              display: flex;
+              align-items: center;
+              font-size: 18px;
+              font-weight: bold;
+              span {
+                padding-left: 10px;
+              }
+            }
+          }
+        }
+      }
+      &.testimonialsIMG,
+      &.articlesIMG {
+        width: 305px;
+        @include responsive(xs) {
+          order: 1;
+          margin-left: 24px;
+        }
+      }
+      &.didContent {
+        width: 500px;
+        @include responsive(xs) {
+          order: 2;
+          width: 100%;
+          padding: 0 24px;
+        }
+        h2 {
+          margin-bottom: 40px;
+          width: 100%;
+        }
+      }
+      &.didIMG {
+        @include responsive(xs) {
+          order: 1;
+        }
+      }
+      &.articlesContent {
+        width: inherit;
+        @include responsive(xs) {
+          order: 2;
+          width: 100%;
+          padding: 0 24px;
+        }
+        h2 {
+          @include responsive(xs) {
+            margin-top: 20px;
+          }
+        }
+        ul {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          margin-top: 50px;
+          width: 765px;
+          @include responsive(xs) {
+            width: 100%;
+            margin-top: 15px;
+          }
+          li {
+            width: 47%;
+            margin-bottom: 60px;
+            @include responsive(xs) {
+              width: 100%;
+              margin-bottom: 30px;
+            }
+            h4 {
+              font-family: $playFair;
+              font-size: $collapseTitle;
+              line-height: $lineHeight;
+              padding-bottom: 15px;
+              @include responsive(xs) {
+                font-size: $readSize;
+              }
+            }
+            .bottom {
+              font-size: $descSize;
+              font-weight: 300;
+              color: $thirdColor;
+              display: flex;
+              align-items: end;
+              i {
+                line-height: 7px;
+                font-size: 24px;
+                padding: 0 7px;
+              }
+            }
+          }
+        }
+        button {
+          margin-top: 0;
+        }
+      }
+      &.speakingContent {
+        @include responsive(xs) {
+          order: 2;
+          width: 100%;
+          align-items: flex-start;
+          padding: 0 24px;
+          padding-bottom: 60px;
+        }
+        p {
+          color: $thirdColor;
+          font-size: $descSize;
+          font-weight: 300;
+          letter-spacing: -0.2px;
+          line-height: $descHeight;
+          width: 400px;
+          padding-bottom: 40px;
+          @include responsive(xs) {
+            width: 100%;
+            font-size: $buttonSize;
+            text-align: left;
+            line-height: 24px;
+          }
+        }
+        button {
+          margin-top: 0;
+        }
+      }
+      &.contactContent {
+        width: 509px;
+        @include responsive(xs) {
+          order: 2;
+          width: 100%;
+          align-items: flex-start;
+          padding: 0 24px;
+          padding-bottom: 60px;
+        }
+        p {
+          color: $thirdColor;
+          font-size: $descSize;
+          font-weight: 300;
+          letter-spacing: -0.2px;
+          line-height: $descHeight;
+          width: 570px;
+          padding-bottom: 40px;
+          @include responsive(xs) {
+            width: 100%;
+            font-size: $buttonSize;
+            text-align: left;
+            line-height: 24px;
+          }
+        }
+        form {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          input {
+            width: 240px;
+            height: 62px;
+            outline: none;
+            border: 2px solid $collapseHr;
+            box-sizing: border-box;
+            border-radius: 12px;
+            font-size: $buttonSize;
+            padding: 17px 24px;
+            color: #000;
+            letter-spacing: -0.2px;
+            font-weight: bold;
+            @include responsive(xs) {
+              width: 100%;
+              font-size: $buttonSize;
+            }
+            &::placeholder {
+              font-size: $buttonSize;
+              color: #000;
+              letter-spacing: -0.2px;
+              font-weight: bold;
+              @include responsive(xs) {
+                font-size: $buttonSize;
+              }
+            }
+          }
+          textarea {
+            width: 500px;
+            height: 145px;
+            outline: none;
+            resize: none;
+            line-height: $descHeight;
+            border: 2px solid $collapseHr;
+            box-sizing: border-box;
+            border-radius: 12px;
+            font-size: $buttonSize;
+            padding: 17px 24px;
+            color: #000;
+            letter-spacing: -0.2px;
+            font-weight: bold;
+            @include responsive(xs) {
+              width: 100%;
+              font-size: $buttonSize;
+            }
+            &::placeholder {
+              font-size: $buttonSize;
+              color: #000;
+              letter-spacing: -0.2px;
+              font-weight: bold;
+              @include responsive(xs) {
+                font-size: $buttonSize;
+              }
+            }
+          }
+          button {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    font-size: $descSize;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 120px;
+    border-top: 1px solid $collapseHr;
+    padding: 25px 0;
+    @include responsive(xs) {
+      margin-top: 60px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 35px 24px;
+    }
+
+    .social {
+      align-items: center;
+      display: flex;
+      @include responsive(xs) {
+        padding-top: 26px;
+      }
+      li {
+        padding: 0 11px;
+        img {
+          width: 24px;
+        }
+      }
+    }
+  }
+}
+
+#fullWidthVideo {
+  width: 100% !important;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  & .not {
+    width: 70%;
+    margin: 0px auto;
+    iframe {
+      width: 100%;
+      height: 80vh;
+      min-height: 80%;
+      @include responsive(xs) {
+        height: 40vh;
+        min-height: 40%;
+      }
+    }
+  }
+  span {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 45px;
+    color: white;
+    font-family: 'Arial';
+    @include responsive(xs) {
+      font-size: 28px;
+      top: 25px;
+      right: 25px;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
