@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Prismic from 'prismic-javascript'
+import { Preloader, Puff } from 'react-preloader-icon';
 
 import Header from './header'
 import About from './about'
@@ -51,6 +52,18 @@ function Layout() {
   useEffect(() => {
     fetchData()
   }, [])
+
+  if (load) {
+    return (
+      <Preloader
+        use={Puff}
+        size={90}
+        strokeWidth={5}
+        strokeColor="#000"
+        duration={2000}
+      />
+    )
+  }
 
   if (isVisible) {
     return (

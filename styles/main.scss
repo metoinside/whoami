@@ -1,7 +1,7 @@
-@import 'reset.scss';
-@import 'variable.scss';
-@import '../node_modules/animate-scss/animate.scss';
-@import 'mixin.scss';
+@import "reset.scss";
+@import "variable.scss";
+@import "../node_modules/animate-scss/animate.scss";
+@import "mixin.scss";
 
 #index {
   width: 1170px;
@@ -45,7 +45,7 @@
       align-items: center;
     }
     .openMenu {
-      background: url('/menu.svg');
+      background: url("/menu.svg");
       width: 18px;
       height: 16px;
       margin-left: 27px;
@@ -54,7 +54,7 @@
       }
     }
     .closeMenu {
-      background: url('/close.svg');
+      background: url("/close.svg");
       width: 16px;
       height: 16px;
       margin-left: 27px;
@@ -470,7 +470,7 @@
       }
       &#aboutVideo::before,
       &#aboutVideo::after {
-        content: '';
+        content: "";
       }
       &.specialtiesIMG {
         padding-top: 0px;
@@ -806,14 +806,21 @@
     right: 40px;
     font-size: 45px;
     color: white;
-    font-family: 'Arial';
+    font-family: "Arial";
     @include responsive(xs) {
       font-size: 28px;
       top: 25px;
       right: 25px;
     }
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }
+}
+
+.preloader-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

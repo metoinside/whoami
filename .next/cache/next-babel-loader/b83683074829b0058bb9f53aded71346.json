@@ -1,0 +1,1 @@
+{"ast":null,"code":"module.exports = {\n  h2: \"Testimonials\"\n};","map":{"version":3,"sources":["/Users/bozkurt/Desktop/deneme/WhoAmI/configs/testimonials.js"],"names":["module","exports","h2"],"mappings":"AAAAA,MAAM,CAACC,OAAP,GAAgB;AACdC,EAAAA,EAAE,EAAE;AADU,CAAhB","sourcesContent":["module.exports ={\n  h2: \"Testimonials\"\n}"]},"metadata":{},"sourceType":"script"}

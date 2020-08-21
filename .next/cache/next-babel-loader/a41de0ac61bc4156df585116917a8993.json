@@ -1,0 +1,1 @@
+{"ast":null,"code":"module.exports = {\n  h2: \"My Articles\"\n};","map":{"version":3,"sources":["/Users/bozkurt/Desktop/deneme/WhoAmI/configs/myArticles.js"],"names":["module","exports","h2"],"mappings":"AAAAA,MAAM,CAACC,OAAP,GAAiB;AACfC,EAAAA,EAAE,EAAE;AADW,CAAjB","sourcesContent":["module.exports = {\n  h2: \"My Articles\"\n}\n"]},"metadata":{},"sourceType":"script"}
