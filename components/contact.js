@@ -42,7 +42,7 @@ export default function WhatIDid(props) {
     >
       <section className="didIMG">
         <img
-          src={props.data && props.data.image.url}
+          src={props.data ? props.data.image.url : null}
           alt="Contat me"
           width={`${mobil ? '327' : 'auto'}`}
           height={`${mobil ? '327' : 'auto'}`}

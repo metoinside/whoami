@@ -24,7 +24,7 @@ export default function WhatIDid(props) {
       </section>
       <section className="didIMG">
         <img
-          src={props.data && props.data.image.url}
+          src={props.data ? props.data.image.url : null}
           alt="Speaking and meetings"
           width={`${mobil ? '327' : 'auto'}`}
           height={`${mobil ? '327' : 'auto'}`}
