@@ -43,7 +43,7 @@ function Layout() {
     );
     if (response) {
       setData(response.results);
-      console.log(response.results)
+      console.log(response.results);
       response.results.length !== 0 &&
         setConstants(
           response.results.filter((item) => item.type == "constants")
@@ -60,7 +60,9 @@ function Layout() {
     return (
       <>
         <Head>
-          <title>Metin Akın</title>
+          <title>
+            {(constants && constants[0]?.data?.title[0]?.text) || "Metin Akın"}
+          </title>
         </Head>
         <Preloader
           use={Puff}
@@ -78,7 +80,8 @@ function Layout() {
       <div id="fullWidthVideo">
         <Head>
           <title>
-            {!load ? constants && constants[0]?.data?.title[0]?.text : "Metin akın"}
+            {(constants && constants && constants[0]?.data?.title[0]?.text) ||
+              "Metin akın"}
           </title>
           <meta
             name="viewport"
@@ -87,7 +90,8 @@ function Layout() {
           <meta
             name="title"
             content={
-              !load ? constants && constants[0]?.data?.title[0]?.text : "Metin akın"
+              (constants && constants && constants[0]?.data?.title[0]?.text) ||
+              "Metin akın"
             }
           />
           <meta
@@ -126,7 +130,8 @@ function Layout() {
       <div id="index">
         <Head>
           <title>
-            {!load ? constants && constants[0]?.data?.title[0]?.text : "Metin akın"}
+          {(constants && constants && constants[0]?.data?.title[0]?.text) ||
+              "Metin akın"}
           </title>
           <meta
             name="viewport"
@@ -135,7 +140,9 @@ function Layout() {
           <meta
             name="title"
             content={
-              !load ? constants && constants[0]?.data?.title[0]?.text : "Metin akın"
+              !load
+                ? constants && constants[0]?.data?.title[0]?.text
+                : "Metin akın"
             }
           />
           <meta
