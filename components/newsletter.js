@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 
-import config from '../config'
 
 export default function Newsletter(props) {
   const inputMail = useRef(null)
