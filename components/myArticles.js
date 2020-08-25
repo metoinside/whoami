@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 
-import config from '../config'
 import useWindowSize from '../utils/hook'
 
 const months = [
@@ -57,7 +56,7 @@ export default function MyArticles(props) {
         />
       </section>
       <section className="articlesContent">
-        <h2>{config.myarticles.h2}</h2>
+        <h2>{props.data.length !== 0 ? props.data[0].data.title[0].text : "My Articles"}</h2>
         <ul>
           {getData.load &&
             getData.data.map((item, index) => (

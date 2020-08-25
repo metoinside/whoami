@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react'
 
-import config from '../config'
 import useWindowSize from '../utils/hook'
 
 export default function WhatIDid(props) {
