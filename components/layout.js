@@ -14,6 +14,8 @@ import Contact from "./contact";
 import Speaking from "./speaking";
 import Footer from "./footer";
 
+console.log(process, process.env)
+
 const apiEndpoint = process.env.PRISMIC_WEB_API;
 const accessToken = process.env.PRISMIC_API_KEY;
 
