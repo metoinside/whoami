@@ -152,6 +152,12 @@
     &.closeResMenu {
       z-index: 1;
     }
+    &#About{
+      @include responsive(xs) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
     &#Contact {
       @include responsive(xs) {
         border-bottom: 0px solid $collapseHr;
@@ -166,8 +172,17 @@
       border-bottom: 1px solid $collapseHr;
       padding-bottom: 60px;
       margin-bottom: 30px;
+      padding-left: 24px;
+      padding-right: 24px;
     }
     &#Articles {
+      @include responsive(xs) {
+        border-bottom: 0;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+      }
+    }
+    &#WhatIDid {
       @include responsive(xs) {
         border-bottom: 0;
         padding-bottom: 0px;
@@ -238,7 +253,9 @@
           font-weight: bold;
           @include responsive(xs) {
             width: 100%;
-            font-size: $buttonSize;
+            font-size: 14px;
+            padding-left: 19px;
+            padding-right: 125px;
           }
           &::placeholder {
             font-size: $buttonSize;
@@ -246,7 +263,7 @@
             letter-spacing: -0.2px;
             font-weight: bold;
             @include responsive(xs) {
-              font-size: $buttonSize;
+              font-size: 14px;
             }
           }
         }
@@ -277,17 +294,19 @@
         border-bottom: 0;
         padding-bottom: 0px;
         margin-bottom: 0px;
+        padding-left: 0;
+        padding-right: 0;
       }
       &.specialtiesIMG,
       &.didIMG {
         @include responsive(xs) {
-          width: 90%;
+          width: 100%;
         }
       }
       &.specialtiesIMG img,
       &.didIMG img {
         @include responsive(xs) {
-          max-width: 90%;
+          max-width: 100%;
           height: auto;
           object-fit: cover;
         }
@@ -475,14 +494,10 @@
       }
       &.specialtiesIMG {
         padding-top: 0px;
-        @include responsive(xs) {
-          margin-left: 24px;
-        }
       }
       &.specialtiesContent {
         @include responsive(xs) {
           width: 100%;
-          padding: 0 24px;
         }
         h2 {
           margin-bottom: 40px;
@@ -495,7 +510,6 @@
         min-width: 770px;
         @include responsive(xs) {
           min-width: 100%;
-          padding: 0 24px;
           order: 2;
         }
         ul {
@@ -558,7 +572,7 @@
         width: 305px;
         @include responsive(xs) {
           order: 1;
-          margin-left: 24px;
+          width: 100%;
         }
       }
       &.didContent {
@@ -566,7 +580,6 @@
         @include responsive(xs) {
           order: 2;
           width: 100%;
-          padding: 0 24px;
         }
         h2 {
           margin-bottom: 40px;
@@ -583,7 +596,6 @@
         @include responsive(xs) {
           order: 2;
           width: 100%;
-          padding: 0 24px;
         }
         h2 {
           @include responsive(xs) {
@@ -666,7 +678,6 @@
           order: 2;
           width: 100%;
           align-items: flex-start;
-          padding: 0 24px;
           padding-bottom: 60px;
         }
         p {
@@ -701,7 +712,7 @@
             letter-spacing: -0.2px;
             font-weight: bold;
             @include responsive(xs) {
-              width: 95%;
+              width: 100%;
               font-size: $buttonSize;
             }
             &::placeholder {
@@ -729,7 +740,7 @@
             letter-spacing: -0.2px;
             font-weight: bold;
             @include responsive(xs) {
-              width: 95%;
+              width: 100%;
               font-size: $buttonSize;
             }
             &::placeholder {
