@@ -155,6 +155,7 @@
     &#Contact {
       @include responsive(xs) {
         border-bottom: 0px solid $collapseHr;
+        padding: 0 24px;
       }
     }
     @include slideInLeft($delay: 0s);
@@ -638,7 +639,6 @@
           order: 2;
           width: 100%;
           align-items: flex-start;
-          padding: 0 24px;
           padding-bottom: 60px;
         }
         p {
@@ -701,7 +701,7 @@
             letter-spacing: -0.2px;
             font-weight: bold;
             @include responsive(xs) {
-              width: 100%;
+              width: 95%;
               font-size: $buttonSize;
             }
             &::placeholder {
@@ -729,7 +729,7 @@
             letter-spacing: -0.2px;
             font-weight: bold;
             @include responsive(xs) {
-              width: 100%;
+              width: 95%;
               font-size: $buttonSize;
             }
             &::placeholder {
