@@ -19,16 +19,21 @@ export default function Testimonials(props) {
           {props.data &&
             props.data.map((item, index) => (
               <li key={index}>
-                <div className="star">
-                  {Array.from({ length: item.data.star_sayisi }, (_, index) => (
-                    <Star key={index} />
-                  ))}
-                  <span>{item.data.star_sayisi.toFixed(2)}</span>
-                </div>
+                {item.data.star_sayisi && (
+                  <div className="star">
+                    {Array.from(
+                      { length: item.data.star_sayisi },
+                      (_, index) => (
+                        <Star key={index} />
+                      )
+                    )}
+                    <span>{item.data.star_sayisi.toFixed(2)}</span>
+                  </div>
+                )}
                 <h3>
                   "
                   {`${item.data.title[0].text.slice(0, 164)}${
-                    item.data.title[0].text.length > 165 && "..."
+                    item.data.title[0].text.length > 165 ? "..." : ""
                   }`}
                   "
                 </h3>

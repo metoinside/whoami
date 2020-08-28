@@ -14,8 +14,6 @@ import Contact from "./contact";
 import Speaking from "./speaking";
 import Footer from "./footer";
 
-console.log(process, process.env)
-
 const apiEndpoint = process.env.PRISMIC_WEB_API;
 const accessToken = process.env.PRISMIC_API_KEY;
 
@@ -31,11 +29,11 @@ function Layout() {
   const fetchData = async () => {
     const response = await Client.query(
       Prismic.Predicates.any("document.type", [
-        "homepage",
+        "about",
         "constants",
         "contact_me",
         "header",
-        "homepage0",
+        "specialities",
         "my_articles",
         "speaking",
         "newsletter",
@@ -46,7 +44,8 @@ function Layout() {
     if (response) {
       setData(response.results);
       console.log(response.results);
-      response.results.length !== 0 &&
+      response.results.filter((item) => item.type == "constants").length !==
+        0 &&
         setConstants(
           response.results.filter((item) => item.type == "constants")
         );
@@ -120,7 +119,7 @@ function Layout() {
           dangerouslySetInnerHTML={{
             __html:
               !load &&
-              data?.filter((item) => item.type == "homepage")[0]?.data
+              data?.filter((item) => item.type == "about")[0]?.data
                 .youtube_iframe[0].text,
           }}
         ></div>
@@ -132,7 +131,7 @@ function Layout() {
       <div id="index">
         <Head>
           <title>
-          {(constants && constants && constants[0]?.data?.title[0]?.text) ||
+            {(constants && constants && constants[0]?.data?.title[0]?.text) ||
               "Metin akın"}
           </title>
           <meta
@@ -175,12 +174,12 @@ function Layout() {
         )}
         <About
           isOpen={isOpen}
-          data={!load && data?.filter((item) => item.type == "homepage")}
+          data={!load && data?.filter((item) => item.type == "about")}
           isVisible={isVisible}
           setVisible={setVisible}
         />
         <Specialties
-          data={!load && data?.filter((item) => item.type == "homepage0")}
+          data={!load && data?.filter((item) => item.type == "specialities")}
         />
         <WhatIDid
           data={!load && data?.filter((item) => item.type == "what_i_did")}

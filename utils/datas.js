@@ -13,11 +13,11 @@ export default function data(props) {
     const fetchData = async () => {
       const response = await Client.query(
         Prismic.Predicates.any("document.type", [
-          "homepage",
+          "about",
           "constants",
           "contact_me",
           "header",
-          "homepage0",
+          "specialities",
           "my_articles",
           "testimonials",
           "what_i_did",

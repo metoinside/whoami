@@ -1,16 +1,16 @@
-import React from 'react'
-import Scrollchor from 'react-scrollchor'
+import React from "react";
+import Scrollchor from "react-scrollchor";
 
-import config from '../config'
-import useWindowSize from '../utils/hook'
+import config from "../config";
+import useWindowSize from "../utils/hook";
 
 export default function Header(props) {
-  const size = useWindowSize()
-  const mobil = size.width <= 767
+  const size = useWindowSize();
+  const mobil = size.width <= 767;
 
-  var data = props.constants
+  var data = props.constants;
 
-  const closeMenu = () => props.setOpen(false)
+  const closeMenu = () => props.setOpen(false);
 
   return (
     <header>
@@ -26,7 +26,7 @@ export default function Header(props) {
           )
         )}
         <h1>
-          <a href="/">{data ? data.logo[0].text : "Metin Akın"}</a>
+          <a href="/">{data.logo[0].text ? data.logo[0].text : "Metin Akın"}</a>
         </h1>
         {mobil && props.isOpen ? (
           <nav className="mobil">
@@ -122,5 +122,5 @@ export default function Header(props) {
         )}
       </div>
     </header>
-  )
+  );
 }
