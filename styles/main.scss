@@ -313,6 +313,7 @@
       }
       h2 {
         padding-bottom: 25px;
+        line-height: 48px;
       }
       button {
         margin: 50px 0;
@@ -521,13 +522,13 @@
             margin-top: 15px;
           }
           li {
+            margin-bottom: 30px;
             width: 46%;
             @include responsive(xs) {
               min-width: 100%;
             }
             &:first-child {
               width: 100%;
-              margin-bottom: 30px;
             }
             &:last-child {
               @include responsive(xs) {
