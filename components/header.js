@@ -1,14 +1,16 @@
-import React from 'react'
-import Scrollchor from 'react-scrollchor'
+import React from "react";
+import Scrollchor from "react-scrollchor";
 
-import config from '../config'
-import useWindowSize from '../utils/hook'
+import config from "../config";
+import useWindowSize from "../utils/hook";
 
 export default function Header(props) {
-  const size = useWindowSize()
-  const mobil = size.width <= 767
+  const size = useWindowSize();
+  const mobil = size.width <= 767;
 
-  const closeMenu = () => props.setOpen(false)
+  var data = props.constants;
+
+  const closeMenu = () => props.setOpen(false);
 
   return (
     <header>
@@ -24,7 +26,7 @@ export default function Header(props) {
           )
         )}
         <h1>
-          <a href="/">{config.header.logo}</a>
+          <a href="/">{data.logo[0].text ? data.logo[0].text : "Metin Akın"}</a>
         </h1>
         {mobil && props.isOpen ? (
           <nav className="mobil">
@@ -60,17 +62,17 @@ export default function Header(props) {
             </ul>
             <ul className="social">
               <li>
-                <a href={config.facebook}>
+                <a href={data ? data.facebook : config.facebook}>
                   <img src="/facebook.svg" alt="Facebook profile" />
                 </a>
               </li>
               <li>
-                <a href={config.twitter}>
+                <a href={data ? data.twitter : config.twitter}>
                   <img src="/twitter.svg" alt="Twitter profile" />
                 </a>
               </li>
               <li>
-                <a href={config.instagram}>
+                <a href={data ? data.instagram : config.instagram}>
                   <img src="/instagram.svg" alt="Instagram profile" />
                 </a>
               </li>
@@ -101,17 +103,17 @@ export default function Header(props) {
             <span>.</span>
             <ul className="social">
               <li>
-                <a href={config.facebook}>
+                <a href={data ? data.facebook : config.facebook}>
                   <img src="/facebook.svg" alt="Facebook profile" />
                 </a>
               </li>
               <li>
-                <a href={config.twitter}>
+                <a href={data ? data.twitter : config.twitter}>
                   <img src="/twitter.svg" alt="Twitter profile" />
                 </a>
               </li>
               <li>
-                <a href={config.instagram}>
+                <a href={data ? data.instagram : config.instagram}>
                   <img src="/instagram.svg" alt="Instagram profile" />
                 </a>
               </li>
@@ -120,5 +122,5 @@ export default function Header(props) {
         )}
       </div>
     </header>
-  )
+  );
 }

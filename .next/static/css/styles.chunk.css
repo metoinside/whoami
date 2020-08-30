@@ -8393,8 +8393,13 @@ input {
     #index section.closeResMenu {
       z-index: 1; }
     @media (max-width: 767px) {
+      #index section#About {
+        padding-left: 0;
+        padding-right: 0; } }
+    @media (max-width: 767px) {
       #index section#Contact {
-        border-bottom: 0px solid #DBDCE0; } }
+        border-bottom: 0px solid #DBDCE0;
+        padding: 0 24px; } }
     @media (max-width: 767px) {
       #index section {
         margin-top: 60px;
@@ -8402,9 +8407,16 @@ input {
         flex-direction: column;
         border-bottom: 1px solid #DBDCE0;
         padding-bottom: 60px;
-        margin-bottom: 30px; } }
+        margin-bottom: 30px;
+        padding-left: 24px;
+        padding-right: 24px; } }
     @media (max-width: 767px) {
       #index section#Articles {
+        border-bottom: 0;
+        padding-bottom: 0px;
+        margin-bottom: 0px; } }
+    @media (max-width: 767px) {
+      #index section#WhatIDid {
         border-bottom: 0;
         padding-bottom: 0px;
         margin-bottom: 0px; } }
@@ -8469,7 +8481,9 @@ input {
           @media (max-width: 767px) {
             #index section#Newsletter form input {
               width: 100%;
-              font-size: 16px; } }
+              font-size: 14px;
+              padding-left: 19px;
+              padding-right: 125px; } }
           #index section#Newsletter form input::placeholder {
             font-size: 16px;
             color: #000;
@@ -8477,7 +8491,7 @@ input {
             font-weight: bold; }
             @media (max-width: 767px) {
               #index section#Newsletter form input::placeholder {
-                font-size: 16px; } }
+                font-size: 14px; } }
         #index section#Newsletter form button {
           position: absolute;
           right: 6px;
@@ -8501,18 +8515,21 @@ input {
           margin-top: 30px;
           border-bottom: 0;
           padding-bottom: 0px;
-          margin-bottom: 0px; } }
+          margin-bottom: 0px;
+          padding-left: 0;
+          padding-right: 0; } }
       @media (max-width: 767px) {
         #index section section.specialtiesIMG, #index section section.didIMG {
-          width: 90%; } }
+          width: 100%; } }
       @media (max-width: 767px) {
         #index section section.specialtiesIMG img,
         #index section section.didIMG img {
-          max-width: 90%;
+          max-width: 100%;
           height: auto;
           object-fit: cover; } }
       #index section section h2 {
-        padding-bottom: 25px; }
+        padding-bottom: 25px;
+        line-height: 48px; }
       #index section section button {
         margin: 50px 0;
         background-color: #000000;
@@ -8669,13 +8686,9 @@ input {
         content: ""; }
       #index section section.specialtiesIMG {
         padding-top: 0px; }
-        @media (max-width: 767px) {
-          #index section section.specialtiesIMG {
-            margin-left: 24px; } }
       @media (max-width: 767px) {
         #index section section.specialtiesContent {
-          width: 100%;
-          padding: 0 24px; } }
+          width: 100%; } }
       #index section section.specialtiesContent h2 {
         margin-bottom: 40px; }
         @media (max-width: 767px) {
@@ -8686,7 +8699,6 @@ input {
         @media (max-width: 767px) {
           #index section section.testimonialsContent {
             min-width: 100%;
-            padding: 0 24px;
             order: 2; } }
         #index section section.testimonialsContent ul {
           display: flex;
@@ -8697,13 +8709,13 @@ input {
             #index section section.testimonialsContent ul {
               margin-top: 15px; } }
           #index section section.testimonialsContent ul li {
+            margin-bottom: 30px;
             width: 46%; }
             @media (max-width: 767px) {
               #index section section.testimonialsContent ul li {
                 min-width: 100%; } }
             #index section section.testimonialsContent ul li:first-child {
-              width: 100%;
-              margin-bottom: 30px; }
+              width: 100%; }
             @media (max-width: 767px) {
               #index section section.testimonialsContent ul li:last-child {
                 margin-top: 30px; } }
@@ -8738,14 +8750,13 @@ input {
         @media (max-width: 767px) {
           #index section section.testimonialsIMG, #index section section.articlesIMG {
             order: 1;
-            margin-left: 24px; } }
+            width: 100%; } }
       #index section section.didContent {
         width: 500px; }
         @media (max-width: 767px) {
           #index section section.didContent {
             order: 2;
-            width: 100%;
-            padding: 0 24px; } }
+            width: 100%; } }
         #index section section.didContent h2 {
           margin-bottom: 40px;
           width: 100%; }
@@ -8757,8 +8768,7 @@ input {
         @media (max-width: 767px) {
           #index section section.articlesContent {
             order: 2;
-            width: 100%;
-            padding: 0 24px; } }
+            width: 100%; } }
         @media (max-width: 767px) {
           #index section section.articlesContent h2 {
             margin-top: 20px; } }
@@ -8804,7 +8814,6 @@ input {
           order: 2;
           width: 100%;
           align-items: flex-start;
-          padding: 0 24px;
           padding-bottom: 60px; } }
       #index section section.speakingContent p {
         color: #666666;
@@ -8829,7 +8838,6 @@ input {
             order: 2;
             width: 100%;
             align-items: flex-start;
-            padding: 0 24px;
             padding-bottom: 60px; } }
         #index section section.contactContent p {
           color: #666666;
@@ -8932,10 +8940,83 @@ input {
   height: 100vh;
   background-color: black;
   display: flex;
+  -webkit-animation-name: zoomIn;
+  -moz-animation-name: zoomIn;
+  -ms-animation-name: zoomIn;
+  -o-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -o-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -ms-animation-delay: 0s;
+  -o-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
   align-items: center; }
   #fullWidthVideo .not {
     width: 70%;
-    margin: 0px auto; }
+    margin: 0px auto;
+    -webkit-animation-name: zoomIn;
+    -moz-animation-name: zoomIn;
+    -ms-animation-name: zoomIn;
+    -o-animation-name: zoomIn;
+    animation-name: zoomIn;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    -ms-animation-delay: 0.2s;
+    -o-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden; }
+    @media (max-width: 767px) {
+      #fullWidthVideo .not {
+        width: 100%; } }
     #fullWidthVideo .not iframe {
       width: 100%;
       height: 80vh;

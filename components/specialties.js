@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-import config from '../config'
 import useWindowSize from '../utils/hook'
 
 export default function Specialties(props) {
