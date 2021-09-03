@@ -62,7 +62,7 @@ function Layout() {
       <>
         <Head>
           <title>
-            {(constants && constants[0]?.data?.title[0]?.text) || "Metin Akın"}
+            {(constants && constants[0]?.data?.title[0]?.text) || "Metin"}
           </title>
         </Head>
         <Preloader
@@ -82,7 +82,7 @@ function Layout() {
         <Head>
           <title>
             {(constants && constants && constants[0]?.data?.title[0]?.text) ||
-              "Metin akın"}
+              "Metin"}
           </title>
           <meta
             name="viewport"
@@ -92,7 +92,7 @@ function Layout() {
             name="title"
             content={
               (constants && constants && constants[0]?.data?.title[0]?.text) ||
-              "Metin akın"
+              "Metin"
             }
           />
           <meta
@@ -132,7 +132,7 @@ function Layout() {
         <Head>
           <title>
             {(constants && constants && constants[0]?.data?.title[0]?.text) ||
-              "Metin akın"}
+              "Metin"}
           </title>
           <meta
             name="viewport"
@@ -143,7 +143,7 @@ function Layout() {
             content={
               !load
                 ? constants && constants[0]?.data?.title[0]?.text
-                : "Metin akın"
+                : "Metin"
             }
           />
           <meta
